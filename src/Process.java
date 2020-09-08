@@ -4,9 +4,9 @@ public class Process {
     private double output;
     private int iteration_number;
     private int iteration_finish;
-    private String dest;
+    private Process dest;
 
-    public Process(String name, int input, int iteration_number, int iteration_finish, double output, String dest) {
+    public Process(String name, double input, int iteration_number, int iteration_finish, double output, Process dest) {
         this.name = name;
         this.input = input;
         this.iteration_number = iteration_number;
@@ -30,7 +30,7 @@ public class Process {
         return input;
     }
 
-    public void setInput(int input) {
+    public void setInput(double input) {
         this.input = input;
     }
 
@@ -58,11 +58,11 @@ public class Process {
         this.output = output;
     }
 
-    public String getDest() {
+    public Process getDest() {
         return dest;
     }
 
-    public void setDest(String dest) {
+    public void setDest(Process dest) {
         this.dest = dest;
     }
 }
