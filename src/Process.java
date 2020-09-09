@@ -1,17 +1,13 @@
 public class Process {
     private String name;
     private double input;
-    private double output;
     private int iteration_number;
-    private int iteration_finish;
     private Process dest;
 
-    public Process(String name, double input, int iteration_number, int iteration_finish, double output, Process dest) {
+    public Process(String name, double input, int iteration_number, Process dest) {
         this.name = name;
         this.input = input;
         this.iteration_number = iteration_number;
-        this.iteration_finish = iteration_finish;
-        this.output = output;
         this.dest = dest;
     }
 
@@ -42,22 +38,6 @@ public class Process {
         this.iteration_number = iteration_number;
     }
 
-    public int getIteration_finish() {
-        return iteration_finish;
-    }
-
-    public void setIteration_finish(int iteration_finish) {
-        this.iteration_finish = iteration_finish;
-    }
-
-    public double getOutput() {
-        return output;
-    }
-
-    public void setOutput(double output) {
-        this.output = output;
-    }
-
     public Process getDest() {
         return dest;
     }
@@ -65,4 +45,11 @@ public class Process {
     public void setDest(Process dest) {
         this.dest = dest;
     }
+
+    /*public void printIterations() {
+        for (int i = 1; i <= getIteration_number(); i++) {
+            System.out.printf("%-10s %-10.2f %-15.4f %-15.4f %-12.4f \n", Main.itNum, 0.00, getInput(), getInput(), Main.finishedWork);
+            Main.itNum++;
+        }
+    }*/
 }
