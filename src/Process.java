@@ -46,10 +46,27 @@ public class Process {
         this.dest = dest;
     }
 
-    /*public void printIterations() {
+    public void forwardInput(Process returnDest) {
+        dest.setInput(dest.getInput() + (getInput()*0.8));
+        if (this.name.equals(returnDest.getName())) {
+            returnDest.setInput(getInput()*0.2);
+        }
+        else {
+            returnDest.setInput(returnDest.getInput() + (getInput()*0.2));
+            setInput(0.00);
+        }
+    }
+
+    public void forwardInput() {
+        dest.setInput(getInput());
+        setInput(0.00);
+    }
+
+    public void printIterations(Process a, Process b, Process c, Process d) {
         for (int i = 1; i <= getIteration_number(); i++) {
-            System.out.printf("%-10s %-10.2f %-15.4f %-15.4f %-12.4f \n", Main.itNum, 0.00, getInput(), getInput(), Main.finishedWork);
+            System.out.printf("%-10s %-10.2f %-15.4f %-15.4f %-15.4f %-15.4f %-12.4f \n",
+                    Main.itNum, 0.00, a.getInput(), b.getInput(), c.getInput(), d.getInput(), Main.deployment.getInput());
             Main.itNum++;
         }
-    }*/
+    }
 }
